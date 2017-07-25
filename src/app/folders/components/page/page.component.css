@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  border-right: 1px solid #000;
+}
+
+.menu {
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu-link {
+  display: block;
+  padding: 10px;
+  background: #fff;
+}
+
+.menu-link:hover {
+  background: #666;
+}
+
+.menu-link--active {
+  background: #999;
+}
+
+.content {
+  padding: 20px;
+}
