@@ -1,3 +1,4 @@
+import { EmailPageComponent } from './pages/email/email.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'folder/:folderType',
     component: FolderPageComponent
+  },
+  {
+    path: 'folder/:folderType/email/:emailId',
+    component: EmailPageComponent
   }
 ];
 

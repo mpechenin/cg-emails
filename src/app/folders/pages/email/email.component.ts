@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { FoldersService } from './../../services/folders.service';
 
 @Component({
-  selector: 'app-email',
   templateUrl: './email.component.html',
   styleUrls: ['./email.component.css']
 })
-export class EmailComponent implements OnInit {
+export class EmailPageComponent implements OnInit {
+  email: any;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private service: FoldersService
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.service.getEmail(params.emailId)
+        .then((email) => this.email = email);
+    });
   }
 
 }
