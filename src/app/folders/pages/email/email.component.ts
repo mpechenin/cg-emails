@@ -31,7 +31,7 @@ export class EmailPageComponent implements OnInit {
 
   deleteEmail(emailId: string) {
     this.service.deleteEmail(emailId).then(() => {
-      this.router.navigateByUrl(`/folder/${this.folderType}`);
+      this.router.navigateByUrl(`${this.folderType}`);
     });
   }
 }

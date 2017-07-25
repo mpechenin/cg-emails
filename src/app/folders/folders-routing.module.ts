@@ -6,16 +6,16 @@ import { FolderPageComponent } from './pages/folder/folder.component';
 
 const routes: Routes = [
   {
-    path: 'folder',
-    redirectTo: 'folder/inbox',
+    path: '',
+    redirectTo: 'inbox',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:folderType',
+    path: ':folderType',
     component: FolderPageComponent
   },
   {
-    path: 'folder/:folderType/email/:emailId',
+    path: ':folderType/email/:emailId',
     component: EmailPageComponent
   }
 ];
