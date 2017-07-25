@@ -1,3 +1,6 @@
 <cg-page>
-  <cg-emails [emails]="emails" [folderType]=folderType></cg-emails>
+  <cg-emails
+    (sendEmail)="sendEmail()"
+    (openEmail)="openEmail($event)"
+    [emails]="emails"></cg-emails>
 </cg-page>

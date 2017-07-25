@@ -25,4 +25,8 @@ export class FolderPageComponent implements OnInit {
       });
     });
   }
+
+  sendEmail = () => this.router.navigate([{outlets: {compose: ''}}]);
+
+  openEmail = (emailId: string) => this.router.navigateByUrl(`folder/${this.folderType}/email/${emailId}`);
 }

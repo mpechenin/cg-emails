@@ -1,0 +1,46 @@
+.overlay {
+  position: fixed;
+  background: rgba(255,255,255,0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.overlay-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.form {
+  margin: 40px auto;
+  border: 1px solid #999;
+  border-radius: 10px;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group--error .form-input {
+  border-color: red;
+}
+
+.form-input {
+  -webkit-appearance: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid #999;
+  box-sizing: border-box;
+}
+
+textarea.form-input {
+  min-height: 100px;
+}

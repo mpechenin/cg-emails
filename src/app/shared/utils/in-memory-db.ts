@@ -69,9 +69,18 @@ export class InMemoryDB {
     });
   }
 
-  addEmail(email: any): Promise<any> {
+  addEmail({to, subject, text}): Promise<any> {
     return new Promise((resolve) => {
+      const email = {
+        id: uuid(),
+        from: me,
+        folder: folders.sent,
+        to,
+        subject,
+        text
+      };
       emails.push(email);
+      console.log(emails);
       resolve(email);
     });
   }

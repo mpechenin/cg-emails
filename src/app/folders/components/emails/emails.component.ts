@@ -8,16 +8,10 @@ import { Router } from '@angular/router';
 })
 export class EmailsComponent {
   @Input() emails: Array<any>;
-  @Input() folderType: string;
   @Output() sendEmail = new EventEmitter();
+  @Output() openEmail = new EventEmitter();
 
-  constructor(
-    private router: Router
-  ) {}
+  openEmailPage = ({id}) => this.openEmail.emit(id);
 
-  openEmailPage = (email: any) => this.router.navigateByUrl(`folder/${this.folderType}/email/${email.id}`);
-
-  compose() {
-    this.router.navigate([{outlets: {compose: ''}}]);
-  }
+  compose = () => this.sendEmail.emit();
 }

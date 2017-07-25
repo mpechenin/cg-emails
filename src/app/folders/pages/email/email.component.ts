@@ -26,7 +26,7 @@ export class EmailPageComponent implements OnInit {
   }
 
   sendEmail(to: string) {
-    console.log(to);
+    this.router.navigate([{outlets: {compose: to}}]);
   }
 
   deleteEmail(emailId: string) {

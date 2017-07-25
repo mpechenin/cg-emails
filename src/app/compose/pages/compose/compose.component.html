@@ -1,3 +1,5 @@
-<p>
-  compose works!
-</p>
+<cg-compose
+  *ngIf="to !== 'none'"
+  (closeCompose)="closeCompose()"
+  (sendEmail)="sendEmail($event)"
+  [to]="to"></cg-compose>
