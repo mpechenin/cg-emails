@@ -76,9 +76,12 @@ export class InMemoryDB {
     });
   }
 
-  removeEmails(emailId: any): Promise<any> {
+  deleteEmail(emailId: any): Promise<any> {
     return new Promise((resolve) => {
-      emails = emails.filter(({id}) => id !== emailId);
+      emails = emails.map((email) => {
+        return email.id !== emailId ? email : Object.assign(email, {folder: folders.deleted});
+      });
+      resolve();
     });
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'cg-email',
@@ -7,4 +7,14 @@ import { Component, Input } from '@angular/core';
 })
 export class EmailComponent {
   @Input() email: any;
+  @Output() sendEmail = new EventEmitter();
+  @Output() deleteEmail = new EventEmitter();
+
+  reply() {
+    this.sendEmail.emit(this.email.from);
+  }
+
+  delete() {
+    this.deleteEmail.emit(this.email.id);
+  }
 }

@@ -1,3 +1,5 @@
 <cg-page>
-  <cg-email [email]="email"></cg-email>
+  <cg-email [email]="email"
+    (sendEmail)="sendEmail($event)"
+    (deleteEmail)="deleteEmail($event)"></cg-email>
 </cg-page>

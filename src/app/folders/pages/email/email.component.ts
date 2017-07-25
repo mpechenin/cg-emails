@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { FoldersService } from './../../services/folders.service';
 
@@ -9,17 +9,29 @@ import { FoldersService } from './../../services/folders.service';
 })
 export class EmailPageComponent implements OnInit {
   email: any;
+  folderType: string;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private service: FoldersService
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
+      this.folderType = params.folderType;
       this.service.getEmail(params.emailId)
         .then((email) => this.email = email);
     });
   }
 
+  sendEmail(to: string) {
+    console.log(to);
+  }
+
+  deleteEmail(emailId: string) {
+    this.service.deleteEmail(emailId).then(() => {
+      this.router.navigateByUrl(`/folder/${this.folderType}`);
+    });
+  }
 }

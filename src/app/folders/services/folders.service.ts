@@ -17,4 +17,8 @@ export class FoldersService {
     return this.db.getEmail(emailId);
   }
 
+  deleteEmail(emailId: string) {
+    return this.db.deleteEmail(emailId);
+  }
+
 }
