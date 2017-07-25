@@ -1,0 +1,8 @@
+<h1 *ngIf="emails && emails.length === 0" class="title">
+  There is no emails in this folder
+</h1>
+<div *ngFor="let email of emails" class="email"
+  (click)="openEmailPage(email)">
+  <div>From: {{ email.from }}<div>
+  <div class="email-text">{{ email.subject }} {{ email.text }}</div>
+</div>

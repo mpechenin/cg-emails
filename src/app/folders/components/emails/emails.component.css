@@ -1,0 +1,18 @@
+.email {
+  display: block;
+  padding: 10px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+.email:hover {
+  background: #999;
+  cursor: pointer;
+}
+
+.email-text {
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
